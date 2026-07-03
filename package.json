@@ -5,9 +5,11 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "dev:local": "TURSO_DATABASE_URL= TURSO_AUTH_TOKEN= tsx watch src/server.ts",
     "start": "tsx src/server.ts",
     "build": "tsc",
-    "seed": "tsx src/db/seed.ts"
+    "seed": "tsx src/db/seed.ts",
+    "seed:local": "TURSO_DATABASE_URL= TURSO_AUTH_TOKEN= tsx src/db/seed.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.17.3",

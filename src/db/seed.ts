@@ -73,108 +73,115 @@ async function main() {
     status?: 'active' | 'cancelled';
   };
 
+  // лято 2026 - събитията на открито, по морето и в планината
   const events: EventSeed[] = [
-    // Maria Popova — култура
-    {
-      organizerEmail: 'maria.popova@artsofia.bg',
-      title: 'Концерт на София Филхармония',
-      description: 'Чайковски и Рахманинов под диригентството на Найден Тодоров.',
-      location: 'Зала "България", София',
-      startAt: at(3, 19, 30),
-      capacity: 800,
-    },
-    {
-      organizerEmail: 'maria.popova@artsofia.bg',
-      title: 'Премиера: "Вишнева градина"',
-      description: 'Чехов в нова постановка на режисьора Иван Добчев.',
-      location: 'Народен театър "Иван Вазов", София',
-      startAt: at(10, 19, 0),
-      capacity: 600,
-    },
-    {
-      organizerEmail: 'maria.popova@artsofia.bg',
-      title: 'Нощ на музеите',
-      description: 'Безплатен вход в над 20 музея и галерии в столицата.',
-      location: 'Различни локации, София',
-      startAt: at(28, 18, 0),
-      capacity: 2000,
-    },
-    // Ivan Dimitrov — технологии
-    {
-      organizerEmail: 'ivan.dimitrov@techbg.bg',
-      title: 'Уъркшоп: Въведение в React Native',
-      description: 'Практическа сесия — създаваме мобилно приложение от нулата.',
-      location: 'SoftUni кампус, София',
-      startAt: at(5, 10, 0),
-      capacity: 40,
-    },
-    {
-      organizerEmail: 'ivan.dimitrov@techbg.bg',
-      title: 'Конференция DevBG 2026',
-      description: 'Двудневна конференция за разработчици — AI, cloud, frontend.',
-      location: 'Inter Expo Center, София',
-      startAt: at(45, 9, 30),
-      capacity: 500,
-    },
-    {
-      organizerEmail: 'ivan.dimitrov@techbg.bg',
-      title: 'Meetup: Sofia JS',
-      description: 'Месечна среща на JavaScript общността. Доклади и нетуъркинг.',
-      location: 'Betahaus, София',
-      startAt: at(14, 19, 0),
-      capacity: 80,
-    },
-    // Elena Todorova — спорт
+    // Elena Todorova - спорт на открито
     {
       organizerEmail: 'elena.todorova@sportbg.bg',
-      title: 'Софийски маратон 2026',
-      description: 'Дистанции 5км, 10км и пълен маратон. Старт от НДК.',
-      location: 'НДК, София',
-      startAt: at(60, 8, 0),
-      capacity: 3000,
-    },
-    {
-      organizerEmail: 'elena.todorova@sportbg.bg',
-      title: 'Йога в парка',
-      description: 'Сутрешна сесия на открито. Подходяща за начинаещи.',
-      location: 'Борисова градина, София',
-      startAt: at(2, 8, 0),
+      title: 'Йога на плажа при изгрев',
+      description: 'Сутрешна сесия на пясъка преди жегата. Подходяща за всички нива.',
+      location: 'Плаж Слънчев бряг',
+      startAt: at(2, 7, 0),
       capacity: 50,
     },
-    // Demo organizer — разни
-    {
-      organizerEmail: 'organizer@demo.bg',
-      title: 'Концерт в Морската градина',
-      description: 'Безплатен концерт на живо. Български изпълнители.',
-      location: 'Морска градина, Варна',
-      startAt: at(7, 20, 0),
-      capacity: 200,
-    },
-    {
-      organizerEmail: 'organizer@demo.bg',
-      title: 'Фестивал на занаятите',
-      description: 'Изложение и работилници. Над 50 майстори от цяла България.',
-      location: 'Античен театър, Пловдив',
-      startAt: at(21, 11, 0),
-      capacity: 1000,
-    },
-    // Past event — отминало
+    // Maria Popova - култура на открито
     {
       organizerEmail: 'maria.popova@artsofia.bg',
-      title: 'Опера: "Травиата"',
-      description: 'Класическа постановка на Верди.',
-      location: 'Софийска опера и балет',
-      startAt: at(-14, 19, 0),
+      title: 'Лято на открито: Симфоничен концерт',
+      description: 'Класика под звездите. София Филхармония в парка на НДК.',
+      location: 'Парк пред НДК, София',
+      startAt: at(3, 20, 30),
+      capacity: 1200,
+    },
+    // Ivan Dimitrov - технологии
+    {
+      organizerEmail: 'ivan.dimitrov@techbg.bg',
+      title: 'Rooftop Tech Meetup: Лято edition',
+      description: 'Кратки доклади, студена бира и нетуъркинг на покрив с гледка.',
+      location: 'Betahaus рууфтоп, София',
+      startAt: at(5, 19, 0),
+      capacity: 90,
+    },
+    // Elena Todorova - планина
+    {
+      organizerEmail: 'elena.todorova@sportbg.bg',
+      title: 'Изгрев на Черни връх',
+      description: 'Нощен преход до върха на Витоша, за да посрещнем изгрева.',
+      location: 'Витоша, старт от Алеко',
+      startAt: at(7, 4, 0),
+      capacity: 60,
+    },
+    // Maria Popova - фестивал
+    {
+      organizerEmail: 'maria.popova@artsofia.bg',
+      title: 'A to JazZ фестивал 2026',
+      description: 'Три вечери с български и международни джаз имена. Вход свободен.',
+      location: 'Южен парк, София',
+      startAt: at(10, 18, 0),
+      capacity: 5000,
+    },
+    // Ivan Dimitrov - уъркшоп
+    {
+      organizerEmail: 'ivan.dimitrov@techbg.bg',
+      title: 'Уъркшоп: React Native за начинаещи',
+      description: 'Практическа сесия - мобилно приложение от нулата за един ден.',
+      location: 'SoftUni кампус, София',
+      startAt: at(14, 10, 0),
+      capacity: 45,
+    },
+    // Elena Todorova - плаж
+    {
+      organizerEmail: 'elena.todorova@sportbg.bg',
+      title: 'Турнир по плажен волейбол',
+      description: 'Аматьорски турнир 2x2 на плажа. Награди за първите три отбора.',
+      location: 'Централен плаж, Бургас',
+      startAt: at(21, 9, 0),
+      capacity: 128,
+    },
+    // Maria Popova - кино на открито
+    {
+      organizerEmail: 'maria.popova@artsofia.bg',
+      title: 'Кино на открито: "Малкият принц"',
+      description: 'Прожекция под звездите. Донесете си одеяло и стол.',
+      location: 'Летен театър, Пловдив',
+      startAt: at(28, 21, 0),
+      capacity: 300,
+    },
+    // Ivan Dimitrov - хакатон
+    {
+      organizerEmail: 'ivan.dimitrov@techbg.bg',
+      title: 'Летен Hack Camp 2026',
+      description: 'Двудневен хакатон край морето. Кодим до залез, къмпинг вечер.',
+      location: 'Кампус край Созопол',
+      startAt: at(45, 9, 30),
+      capacity: 120,
+    },
+    // Demo organizer - фестивал на морето
+    {
+      organizerEmail: 'organizer@demo.bg',
+      title: 'Фестивал на морето Варна',
+      description: 'Улична храна, крафт бира и живо изпълнение на плажа.',
+      location: 'Морска градина, Варна',
+      startAt: at(60, 18, 0),
+      capacity: 1500,
+    },
+    // Past event - отминало
+    {
+      organizerEmail: 'maria.popova@artsofia.bg',
+      title: 'Лятно откриване: Соул вечер',
+      description: 'Концерт на открито в началото на сезона.',
+      location: 'Летен театър, Варна',
+      startAt: at(-14, 20, 0),
       capacity: 700,
     },
     // Cancelled event
     {
-      organizerEmail: 'ivan.dimitrov@techbg.bg',
-      title: 'Hackathon: AI for Good',
-      description: 'Отменено поради липса на спонсори.',
-      location: 'Sofia Tech Park',
-      startAt: at(30, 9, 0),
-      capacity: 100,
+      organizerEmail: 'organizer@demo.bg',
+      title: 'Drone шоу над езерото',
+      description: 'Отменено поради ограничения за въздушното пространство.',
+      location: 'Панчаревско езеро',
+      startAt: at(30, 21, 0),
+      capacity: 800,
       status: 'cancelled',
     },
   ];
@@ -209,56 +216,62 @@ async function main() {
     });
   };
 
-  // 0 — Филхармония
-  await reserve(0, 'user@demo.bg', 2);
-  await reserve(0, 'georgi.petrov@gmail.com', 1);
-  await reserve(0, 'ana.kovacheva@gmail.com', 4);
-  await reserve(0, 'nikolay.stoyanov@abv.bg', 2);
-  await reserve(0, 'tsvetelina.geneva@abv.bg', 1, 'cancelled');
+  // 0 - Йога на плажа
+  await reserve(0, 'svetla.angelova@gmail.com', 1);
+  await reserve(0, 'ana.kovacheva@gmail.com', 2);
+  await reserve(0, 'user@demo.bg', 1);
 
-  // 1 — Вишнева градина
-  await reserve(1, 'svetla.angelova@gmail.com', 2);
-  await reserve(1, 'petar.iliev@yahoo.com', 3);
-  await reserve(1, 'user@demo.bg', 1);
+  // 1 - Симфоничен концерт на открито
+  await reserve(1, 'user@demo.bg', 2);
+  await reserve(1, 'georgi.petrov@gmail.com', 1);
+  await reserve(1, 'ana.kovacheva@gmail.com', 4);
+  await reserve(1, 'nikolay.stoyanov@abv.bg', 2);
+  await reserve(1, 'tsvetelina.geneva@abv.bg', 1, 'cancelled');
 
-  // 2 — Нощ на музеите
-  await reserve(2, 'tsvetelina.geneva@abv.bg', 1);
-  await reserve(2, 'dimitar.kostov@gmail.com', 2);
+  // 2 - Rooftop Tech Meetup
+  await reserve(2, 'georgi.petrov@gmail.com', 1);
+  await reserve(2, 'nikolay.stoyanov@abv.bg', 1);
+  await reserve(2, 'user@demo.bg', 1);
 
-  // 3 — React Native уъркшоп
-  await reserve(3, 'user@demo.bg', 1);
-  await reserve(3, 'georgi.petrov@gmail.com', 1);
-  await reserve(3, 'nikolay.stoyanov@abv.bg', 1);
+  // 3 - Изгрев на Черни връх
   await reserve(3, 'petar.iliev@yahoo.com', 1);
+  await reserve(3, 'tsvetelina.geneva@abv.bg', 1);
   await reserve(3, 'dimitar.kostov@gmail.com', 1);
 
-  // 4 — DevBG 2026
-  await reserve(4, 'user@demo.bg', 1);
+  // 4 - A to JazZ фестивал
+  await reserve(4, 'user@demo.bg', 3);
+  await reserve(4, 'georgi.petrov@gmail.com', 2);
+  await reserve(4, 'svetla.angelova@gmail.com', 2);
   await reserve(4, 'ana.kovacheva@gmail.com', 1);
 
-  // 5 — Sofia JS meetup
+  // 5 - React Native уъркшоп
+  await reserve(5, 'user@demo.bg', 1);
   await reserve(5, 'georgi.petrov@gmail.com', 1);
   await reserve(5, 'nikolay.stoyanov@abv.bg', 1);
-  await reserve(5, 'user@demo.bg', 1);
+  await reserve(5, 'petar.iliev@yahoo.com', 1);
+  await reserve(5, 'dimitar.kostov@gmail.com', 1);
 
-  // 6 — Маратон
-  await reserve(6, 'petar.iliev@yahoo.com', 1);
-  await reserve(6, 'tsvetelina.geneva@abv.bg', 1);
-  await reserve(6, 'dimitar.kostov@gmail.com', 1);
+  // 6 - Плажен волейбол
+  await reserve(6, 'petar.iliev@yahoo.com', 2);
+  await reserve(6, 'dimitar.kostov@gmail.com', 2);
+  await reserve(6, 'nikolay.stoyanov@abv.bg', 4);
 
-  // 7 — Йога
-  await reserve(7, 'svetla.angelova@gmail.com', 1);
-  await reserve(7, 'ana.kovacheva@gmail.com', 2);
-  await reserve(7, 'user@demo.bg', 1);
+  // 7 - Кино на открито
+  await reserve(7, 'tsvetelina.geneva@abv.bg', 2);
+  await reserve(7, 'svetla.angelova@gmail.com', 2);
+  await reserve(7, 'user@demo.bg', 2);
 
-  // 8 — Концерт Варна
-  await reserve(8, 'user@demo.bg', 2);
-  await reserve(8, 'georgi.petrov@gmail.com', 3);
+  // 8 - Летен Hack Camp
+  await reserve(8, 'georgi.petrov@gmail.com', 1);
+  await reserve(8, 'ana.kovacheva@gmail.com', 1);
+  await reserve(8, 'dimitar.kostov@gmail.com', 1);
 
-  // 9 — Фестивал на занаятите
+  // 9 - Фестивал на морето Варна
+  await reserve(9, 'user@demo.bg', 2);
+  await reserve(9, 'georgi.petrov@gmail.com', 3);
   await reserve(9, 'tsvetelina.geneva@abv.bg', 4);
 
-  // 10 — Травиата
+  // 10 - Лятно откриване (минало)
   await reserve(10, 'user@demo.bg', 2);
   await reserve(10, 'svetla.angelova@gmail.com', 1);
 
